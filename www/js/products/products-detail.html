@@ -1,0 +1,47 @@
+<ion-view view-title="Product Detail">
+<ion-nav-bar class="bar-stable">
+	<ion-nav-buttons side="left">
+	<button ng-click="$ionicGoBack()" class="button back-button button-icon button-clear header-item ion-android-arrow-back"></button>
+	</ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content >
+		<div class="list products" ng-if="productDetail">
+			<div class="item">
+				<img ng-src="http://kenndiweni-001-site3.atempurl.com/img/{{productDetail.imageLink}}" >
+			</div>
+			<div class="item">
+				<h2>{{productDetail.productName | lowercase}}</h2>
+        <h3>Availabiity : {{productDetail.outOfStock | lowercase}}</h3>
+        <h3>Description : {{productDetail.description | lowercase}}</h3>
+				<!-- <label class="item item-input item-select">
+					<select>
+					  <option>Blue</option>
+					  <option selected>Green</option>
+					  <option>Red</option>
+					</select>
+				  </label> -->
+
+				  <div class="row">
+						<div class="col col-40">
+							<span class="price" ng-bind-html="productDetail.price"></span>
+							<span class="saleprice" ng-bind-html="productDetail.price"></span>
+						</div>
+						<div class="col col-60">
+							  <!-- <a class="ion-ios-plus-outline"></a>
+							  <label>0</label>
+							  <a class="ion-ios-minus-outline"></a> -->
+							  <ul class='tg-list'>
+								<li class='tg-list-item'>
+								 <input class='tgl tgl-flip' id='cb1' checked ng-if="selectId==productDetail.id"  type='checkbox' >
+								<input class='tgl tgl-flip' id='cb1' ng-if="selectId!=productDetail.id"   ng-click="AddToCart(productDetail)" type='checkbox' >
+
+								<label class='tgl-btn' data-tg-off='Ajouter' data-tg-on='Done' for='cb1'></label>
+								</li>
+								</ul>
+						</div>
+					</div>
+
+			</div>
+		</div>
+  </ion-content>
+</ion-view>

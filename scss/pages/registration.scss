@@ -1,0 +1,22 @@
+
+.scroll-content{ 
+
+     .loginForm{
+	
+	padding:0 15px; border:none;
+        .item{ padding:0px; margin:0px;}
+      
+	span{ color:$font-color;}
+	input,textarea{padding:5px;  font-size:12px;}
+	
+	.item.item-floating-label { border-bottom:0px;} 
+
+	.row{padding:10px 0px;}
+	.col{padding:0px;}
+	.col:first-child{margin-right:5px;}
+	.col.clearMargin{margin-right:0px;}
+	
+	.forgotPwd{text-align:right; color:$link-color; padding:5px 0 0 0; font-size:12px; display:block;}
+    }
+  
+}

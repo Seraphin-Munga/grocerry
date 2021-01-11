@@ -1,0 +1,30 @@
+.bar.bar-subheader.dashboard{ 
+	
+}
+
+.scroll-content{ 
+  
+	.sliderBox { position:relative;}
+	.sliderBox .slider-page-bg{background-color:#000; bottom:7px; opacity:0.3;  padding:12px; position: absolute;width:100%; z-index: 1;  }
+
+	.sliderBox .slider-pager{  bottom:5px; height:20px;  }
+	.sliderBox .slider-pager .slider-pager-page{ color:#fff;  opacity:1;}
+	.sliderBox .slider-pager .slider-pager-page.active{ color:#9D2929;}
+	.sliderBox .sliderImg{ width:100%; }
+
+
+	.catScroll { white-space:nowrap;height:105px;  }
+	.catScroll .button{ border:#eee 1px solid;height:auto;  box-shadow:none; padding:10px; line-height:1.5em; width:100px;}
+
+	.catScroll .button p{ margin:0px;padding:0px; font-size:0.8em; line-height:1.5em; text-transform: capitalize; color:#000;
+	overflow: hidden;  text-overflow:ellipsis; white-space:nowrap;
+	}
+	.catScroll .button h4{ margin:0px;padding:0px; font-size:1em; line-height:1.5em; text-transform: capitalize;}
+
+
+	.catScroll .list .item{border:#ff0000 1px solid; width:100px !important; display:inline; margin:0px;padding:0px;}
+
+
+ 
+}
+ 

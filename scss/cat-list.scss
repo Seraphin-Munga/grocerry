@@ -1,0 +1,57 @@
+.sir-accordion-wrapper { overflow: hidden; width: 100%; position: relative; display: block; }
+
+.sir-accordion-wrapper > div > .sir-accordion-header { background-color:$cat_bg; }
+
+.sir-accordion-wrapper > div > .sir-accordion-header:hover { background-color:$cat_bg; } /*Parent bg color*/
+
+.sir-accordion-wrapper > div > .sir-accordion-header.active-header{ background-color: $cat_bg; } /*Parent Active Color*/
+
+.sir-accordion-wrapper > div > .sir-accordion-header.active-header:hover{ background-color: $cat_bg; }  /*Parent active hover color*/
+
+.sir-accordion-wrapper > div > .sir-accordion-header *{ color:$cat_font_color;} /*Parent font color*/
+
+.sir-accordion-group{ overflow: hidden;  width: 100%; }
+
+.sir-accordion-group > div > .sir-accordion-header {  background-color: $cat_bg;  } /*sub bg color*/
+
+.sir-accordion-group > div > .sir-accordion-header:hover { background-color: $cat_bg; } /*sub hover color*/
+
+.sir-accordion-group > div > .sir-accordion-header.active-header{ background-color: $cat_bg; } /*sub active color*/
+
+.sir-accordion-group > div > .sir-accordion-header.active-header:hover{ background-color: $cat_bg; } /*sub active hover color*/
+
+.sir-accordion-group .sir-accordion-header *{ color:$cat_font_color;  }  /*sub font color*/
+
+.sir-accordion-group .sir-accordion-header.active-header *{ color: $cat_font_color; }
+
+.sir-accordion-header{height: 47px;cursor: pointer;overflow: hidden;margin-bottom:0px;padding: 0px 15px; position: relative; z-index: 1; border-bottom:$cat_seprator 1px solid; font-size:$cat_font_size; padding-top:6px; text-transform: capitalize;  }
+
+.sir-accordion-content{overflow: hidden;}
+
+
+.sir-accordion-content.expanded{ }
+
+.sir-accordion-content > div{height: 0px; }
+
+.sir-accordion-content > div > div{ overflow: auto;   }
+
+.sir-accordion-content.expanded > div{}
+
+.sir-accordion-content-margin {height: 2px; }
+
+.sir-accordion-vertical-align { display: table;  height: 100%;  width: 100%;}
+
+.sir-accordion-vertical-align > * { display: table-cell; vertical-align: middle;  height: 100%; }
+
+
+.sir-accordion-wrapper a{ display:block;  text-decoration:none; }
+.sir-accordion-wrapper a.lev1{ padding:9px 0 9px 20px;  }
+.sir-accordion-wrapper a.lev2{ padding:9px 0 9px 30px; }
+.sir-accordion-wrapper a.lev3{ padding:9px 0 9px 40px; }
+
+
+
+.sir-accordion-header span:before { font-family: 'Glyphicons Halflings'; content: "\2b"; float: right; color:$cat_plus_minus; }
+.sir-accordion-header.active-header span:before { font-family: 'Glyphicons Halflings'; content: "\2212"; float: right; color: $cat_plus_minus; }
+
+.sir-accordion-header img{margin:-6px 0px 0 -6px; padding:0px; width:28px; float:left; }

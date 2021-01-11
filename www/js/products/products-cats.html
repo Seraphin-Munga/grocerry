@@ -1,0 +1,14 @@
+<ion-modal-view>
+<ion-header-bar class="bar-stable">
+<button ng-click="catsClose()" class="button back-button button-icon button-clear header-item ion-android-arrow-back"></button>
+<h1 class="title "><div class="catheading"><span ng-bind-html="selectedCat.title|lowercase"></span> ({{selectedCat.total}})</div></h1>
+</ion-header-bar>
+<ion-content >
+
+	<div class="list">
+	  <a class="item"  ng-click="showProducts(parentCats.category_id);catsClose();" ><span ng-bind-html="parentCats.title"></span> ({{parentCats.total}})</a>
+	  <a class="item"  ng-click="showProducts(subcat.category_id);catsClose();" ng-repeat="subcat in parentCats.subCollection" ><span ng-bind-html="subcat.title"></span> ({{subcat.total}})</a>
+	</div>
+
+  </ion-content>
+</ion-modal-view>

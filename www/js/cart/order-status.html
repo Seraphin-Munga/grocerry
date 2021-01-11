@@ -1,0 +1,34 @@
+<ion-view view-title="Order Satus ">
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-buttons side="left"></ion-nav-buttons>
+    <ion-nav-title>
+      Statut de la commande</ion-nav-title>
+    <ion-nav-buttons side="right"></ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content scroll="false" overflow-scroll="true" class="shoppingCart">
+    <div class="emptycart" ng-if="order_fstatus==1">
+      <img ng-src="img/success.png">
+      <p>Votre commande a été passée avec succès. Notre cadre vous contactera sous peu concernant cette commande.
+
+        Votre référence de commande a été envoyée à votre adresse e-mail
+      </p>
+      <a ng-href="#/app/dashboard" class="button button-balanced">
+        Continuer vos achats</a>
+    </div>
+    <div class="emptycart" ng-if="order_fstatus==2">
+      <img ng-src="img/fail.png">
+      <p>Le processus de paiement a échoué. Veuillez réessayer.</p>
+      <a ng-click="$ionicGoBack()" class="button button-balanced">
+        Réessayer</a><br /><br />
+      <a ng-href="#/app/dashboard" class="button button-balanced">Continuer vos achats</a>
+    </div>
+    <div class="emptycart" ng-if="order_fstatus==3">
+      <img ng-src="img/fail.png">
+      <p>
+        Vous avez un processus de paiement qui n'a pas pu aboutir.</p>
+      <a ng-click="$ionicGoBack()" class="button button-balanced">
+        Réessayer</a><br /><br />
+      <a ng-href="#/app/dashboard" class="button button-balanced">Continuer vos achats</a>
+    </div>
+  </ion-content>
+</ion-view>

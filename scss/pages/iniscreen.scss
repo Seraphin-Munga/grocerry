@@ -1,0 +1,51 @@
+.iniLogin{
+	/* background-image:url('../img/background.png');*/
+	background:$balanced;
+	.logo{ margin:20% 0 15% 0; text-align:center; }
+	.signupBtn{ max-width:250px; margin:15px auto; text-align:center; padding:15px 12px; border-radius:30px; background:#9D2929; color:#fff; font-size:16px; text-transform: uppercase; border:#842525 1px solid;}
+
+	.loginBtn{ max-width:250px; margin:auto; text-align:center; padding:15px 10px; border-radius:30px; background:#fff; color:#000; font-size:16px; text-transform: uppercase; border:#ccc 1px solid;}
+
+	.skipBtn{ max-width:250px; margin:8% auto; text-align:center; padding:12px 10px; border-radius:30px;  font-size:16px; text-transform: uppercase; color:#fff; }
+
+}
+
+.selectLocation{
+	.userLocation{ margin:15% 0 20% 0; text-align:center; padding:0 10px;}
+	.userLocation i{ color:$balanced; font-size:50px;}
+	.userLocation .locTitle{ color:#aaa; font-size:14px;}
+
+	.useCLocationBtn{ max-width:250px; margin:10px auto; text-align:center; padding:10px 10px; border-radius:5px; background:$balanced; color:#fff; font-size:14px; text-transform:uppercase; border:$balanced 1px solid;}
+
+	.selectLocationBtn{ max-width:250px; margin:10px auto; text-align:center; padding:10px 10px; border-radius:5px; background:#888; color:#fff; font-size:14px; text-transform: uppercase; border:#777 1px solid;}
+}
+
+.iniform{
+	/* background-image:url('../img/background.png');*/
+	background:$bg-img-like !important;
+	padding-top:20px;
+
+	.error{ color:#ff0000; font-size:12px;}
+	.row{ padding:0px; margin:0px;}
+	.row .col{ padding:0px; margin:0px;}
+	.row .col:first-child{ margin-right:7px;}
+	
+	.list .item{ border:none; padding:0px;}
+	.list .item input,textarea{ color:#fff; height:40px;border:#eee 1px solid; padding:5px;}
+
+	.item .item-select{ min-height:30px; max-width:100%;  border:#eee 1px solid; margin:0 0 2px 0;}
+	.item select{background:$bg-img-like; color:#fff; border:#ccc 1px solid;min-width:100%;padding:0 0 0 5px; text-align:left;max-height:40px; direction:ltr; margin-top:5px;  }
+	.item-select:after{ color:#fff;  }
+	
+	.codebtn{ width:90%; margin:auto; text-align:center; margin:7px 0 0 13px; padding:5px 5px; border-radius:5px; background:#fff; color:#000; font-size:13px; text-transform:uppercase; border:#ccc 1px solid;}
+
+	input::-webkit-input-placeholder {  color:#fff;}
+	input:-moz-placeholder {color: #fff;}
+	input::-moz-placeholder {color:#fff;}
+	input:-ms-input-placeholder {color:#fff;}
+	/*--------------------*/
+	textarea::-webkit-textarea-placeholder {  color:#fff;}
+	textarea:-moz-placeholder {color: #fff;}
+	textarea::-moz-placeholder {color:#fff;}
+	textarea:-ms-textarea-placeholder {color:#fff;}
+}

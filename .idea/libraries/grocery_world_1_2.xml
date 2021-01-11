@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="grocery-world(1)">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/platforms/browser/www/img/grocery-world(1).zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

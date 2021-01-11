@@ -1,0 +1,21 @@
+.profileBg{
+	background:#fff;
+	.profilePic{ background:#A5D371; min-height:200px; padding:30px;}    
+
+	.profileImg {
+		width: 150px;
+		height:150px;
+		border-radius: 75px;
+		-webkit-border-radius: 75px;
+		-moz-border-radius: 100px;
+		box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+		-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+		-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+		background-size:100% 100%;
+		margin:0% auto;
+		display:block;
+	}
+
+	.list .item{ border-bottom:#eee 1px solid; color:#000; }
+	.list .item i{ font-size:25px; }
+}

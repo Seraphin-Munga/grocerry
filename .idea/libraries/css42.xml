@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="css4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/platforms/android/app/build/intermediates/merged_assets/release/mergeReleaseAssets/out/www/css/css.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

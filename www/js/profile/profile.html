@@ -1,0 +1,23 @@
+<ion-view view-title="Profile">
+  <ion-content class="profileBg">
+    <div class="profilePic">
+      <a href="#"><img ng-src="img/default-avatar.png" class="profileImg"></a>
+    </div>
+
+    <div class="list">
+      <div class="item item-icon-left"><i class="icon ion-person"></i>{{firstName}} {{lastName}}</div>
+      <div class="item item-icon-left"><i class="icon ion-email"></i>{{email}}</div>
+
+      <div class="item item-icon-left">
+        <i class="icon ion-key">
+          <input type="password" placeholder="New Password" name="password" ng-model="password"
+           >
+        </i>
+      </div>
+
+      <!-- <a class="item item-icon-left"  ><i class="icon ion-key"></i>Change Password</a> -->
+    </div>
+    <div style="width:200px;margin:auto;"><button class="button button-block button-assertive"
+        ng-click="btnResetPassword()">Reset Password</button></div>
+  </ion-content>
+</ion-view>

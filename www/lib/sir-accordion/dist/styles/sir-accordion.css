@@ -1,0 +1,58 @@
+.sir-accordion-wrapper { overflow: hidden; width: 100%; position: relative; display: block; }
+
+.sir-accordion-wrapper > div > .sir-accordion-header { background-color:#9A8362; }
+
+.sir-accordion-wrapper > div > .sir-accordion-header:hover { background-color:#9A8362; } /*Parent bg color*/
+
+.sir-accordion-wrapper > div > .sir-accordion-header.active-header{ background-color: #9A8362; } /*Parent Active Color*/
+
+.sir-accordion-wrapper > div > .sir-accordion-header.active-header:hover{ background-color: #9A8362; }  /*Parent active hover color*/
+
+.sir-accordion-wrapper > div > .sir-accordion-header *{ color:#fff;} /*Parent font color*/
+
+.sir-accordion-group{ overflow: hidden;  width: 100%; }
+
+.sir-accordion-group > div > .sir-accordion-header {  background-color: #9A8362;  } /*sub bg color*/
+
+.sir-accordion-group > div > .sir-accordion-header:hover { background-color: #9A8362; } /*sub hover color*/
+
+.sir-accordion-group > div > .sir-accordion-header.active-header{ background-color: #9A8362; } /*sub active color*/
+
+.sir-accordion-group > div > .sir-accordion-header.active-header:hover{ background-color: #9A8362; } /*sub active hover color*/
+
+.sir-accordion-group .sir-accordion-header *{ color:#fff;  }  /*sub font color*/
+
+.sir-accordion-group .sir-accordion-header.active-header *{ color: white; }
+
+.sir-accordion-header{height: 40px;cursor: pointer;overflow: hidden;margin-bottom:0px;padding: 0px 15px; position: relative; z-index: 1; border-bottom:#BAA993 1px solid;  }
+
+.sir-accordion-content{overflow: hidden;}
+
+
+.sir-accordion-content.expanded{ }
+
+.sir-accordion-content > div{height: 0px; }
+
+.sir-accordion-content > div > div{ overflow: auto;   }
+
+.sir-accordion-content.expanded > div{}
+
+.sir-accordion-content-margin {height: 2px; }
+
+.sir-accordion-vertical-align { display: table;  height: 100%;  width: 100%;}
+
+.sir-accordion-vertical-align > * { display: table-cell; vertical-align: middle;  height: 100%; }
+
+
+.sir-accordion-wrapper a{ display:block;  text-decoration:none; }
+.sir-accordion-wrapper a.lev1{ padding:9px 0 9px 10px; }
+.sir-accordion-wrapper a.lev2{ padding:9px 0 9px 20px; }
+.sir-accordion-wrapper a.lev3{ padding:9px 0 9px 30px; }
+
+.plink {}
+
+.sir-accordion-header span:before { font-family: 'Glyphicons Halflings'; content: "\2b"; float: right; color: white; }
+.sir-accordion-header.active-header span:before { font-family: 'Glyphicons Halflings'; content: "\2212"; float: right; color: white; }
+
+
+/*.plink span:after { float: right;     color: white;     content: "\2212"; font-family: 'Glyphicons Halflings';}*/

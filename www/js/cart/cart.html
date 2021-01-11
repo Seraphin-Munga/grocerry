@@ -1,0 +1,54 @@
+<ion-view view-title="Panier">
+<ion-nav-bar class="bar-stable">
+	<ion-nav-buttons side="left">
+	<button ng-click="$ionicGoBack()" class="button back-button button-icon button-clear header-item ion-android-arrow-back"></button>
+	</ion-nav-buttons>
+</ion-nav-bar>
+
+ <div class="checkoutBar" ng-if="cartProducts!=''">
+	<div class="bar bar-footer">
+		<div class="row">
+			<div class="col">
+				<p>{{cartItems}} Items</p>
+        <!-- <p ><i class="fa fa-usd" aria-hidden="true"></i>{{cartTotal}}</p> -->
+        <p >Fc {{cartTotal}}</p>
+			</div>
+			<div class="col"><div class="chckout" ng-click="deliveryAddress()">Check-out<i class="ion-chevron-right"></i></div></div>
+		</div>
+	</div>
+</div>
+  <ion-content scroll="false" overflow-scroll="true" class="shoppingCart" >
+
+	<ion-content direction="y" class="cartSubContent"  scroll="true"   lazy-scroll>
+	<div class="list products" >
+		<div class="item item-thumbnail-left" ng-repeat="tmpObj in cartProducts">
+		  <img ng-src="http://kenndiweni-001-site3.atempurl.com/img/{{tmpObj.imageLink!=null ? tmpObj.imageLink : ' download (4).jpg' }}" ng-click="showProductDetail(tmpObj.key);">
+		  <h2>{{tmpObj.productName | lowercase}}</h2>
+		  <h3>{{tmpObj.manufacturer}}</h3>
+		  <h3 ng-if="tmpObj.weight">Weight : {{tmpObj.weight | number:2}} {{tmpObj.weight_class | lowercase}}</h3>
+		  <h3 ng-if="tmpObj.model">Product Code : {{tmpObj.productCode}}</h3>
+
+			<div class="row">
+				<div class="col col-10">
+					<span class="saleprice" ng-bind-html="tmpObj.price"></span>
+				</div>
+				<div class="col col-90">
+					  <a class="ion-ios-minus-outline" ng-click="updateQty(tmpObj,'less');"></a>
+					  <label>{{tmpObj.purchaseQuantity}}</label>
+					  <a class="ion-ios-plus-outline" ng-click="updateQty(tmpObj,'add');"></a>
+					  <a class="deleteIcon ion-ios-trash-outline" style="margin-left:20px;" ng-click="removeProduct(tmpObj);"></a>
+				</div>
+			</div>
+		</div>
+  </div>
+
+	<div class="emptycart" ng-if="cartProducts==''">
+			<i class="ion-ios-cart"></i>
+			<p>Il n'y a aucun objet dans votre panier. Profitez d'une grande expérience de magasinage avec nous!</p>
+
+			<a ng-href="#/app/dashboard" class="button button-balanced">Commencez vos achats</a>
+	</div>
+	</ion-content>
+
+  </ion-content>
+</ion-view>

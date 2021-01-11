@@ -1,0 +1,23 @@
+<ion-modal-view>
+  <ion-header-bar class="item-input-inset bar-stable">
+    <button ng-click="close()" class="button back-button button-icon button-clear header-item ion-ios-arrow-back"></button>
+	<h1 class="title ">Select Your Location</h1>
+  </ion-header-bar>
+  	<div class="bar bar-subheader dashboard">
+		<div  class="item-input-wrapper searchWrapper">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input type="search" placeholder="Search Location" ng-model="search.query">
+			<i ng-if="btngLocClose" ng-click="resetGlocation();" class="icon ion-ios-close placeholder-icon"></i>
+		</div>
+	</div>
+  <ion-content class="has-subheader">
+	<ion-list>
+	  <ion-item ng-show="search.error">
+		{{search.error}}
+	  </ion-item>
+	  <ion-item ng-repeat="suggestion in search.suggestions" ng-click="choosePlace(suggestion)">
+		{{suggestion.description}}
+	  </ion-item>
+	</ion-list>
+  </ion-content>
+</ion-modal-view>

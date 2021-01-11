@@ -1,0 +1,42 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+	   <button ng-click="viewCart();" ng-if="isCartIconVisible" class="button cart-button button-fab button-fab-bottom-right">
+			<div class="cartIcon">{{cartItems}}</div>
+    </button>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="expanded">
+       <img ng-src="img/default-avatar.png"  class="avatar motion spin fade"  >
+	   <div class="menu-bottom" id="email">{{email}}</div>
+    </ion-header-bar>
+    <ion-content class="has-expanded-header">
+      <ion-list>
+        <ion-item menu-close href="#/app/dashboard"><i class="ion-ios-home"><span>Home</span></i></ion-item>
+      </ion-list>
+
+    <div sir-accordion collection="accordionArray" config="accordionConfig"></div>
+
+    <ion-list>
+      <ion-item menu-close href="#/app/profile"><i class="ion-ios-person"><span>Profile</span></i></ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item menu-close ng-click ="logout()" ><i class="ion-ios-book"><span>Log Out</span></i></ion-item>
+    </ion-list>
+
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
+
+

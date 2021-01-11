@@ -1,0 +1,22 @@
+<ion-view view-title="Choose Delivery Location">
+<ion-nav-bar class="bar-stable">
+	<ion-nav-buttons side="left">
+	<button ng-click="$ionicGoBack()" class="button back-button button-icon button-clear header-item ion-android-arrow-back"></button>
+	</ion-nav-buttons>
+	<ion-nav-buttons side="right"></ion-nav-buttons>
+</ion-nav-bar>
+<ion-content class="selectLocation">
+
+			<div class="userLocation">
+				<i class="ion-location"></i>
+				<div class="locTitle">Your Current Location</div>
+				<div>{{userAddress}}</div>
+			</div>
+			<div class="useCLocationBtn" ng-click="findLocation();">Use Current Location</div>
+			<div class="selectLocationBtn" location-suggestion getlocation="setLocation(data);" location>Select Location Manually</div>
+
+
+
+
+</ion-content>
+</ion-view>

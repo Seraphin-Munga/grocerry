@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="css3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/platforms/android/app/src/main/assets/www/css/css.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

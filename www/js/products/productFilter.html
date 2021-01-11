@@ -1,0 +1,103 @@
+<ion-view view-title="Products">
+  <ion-nav-title>
+    <a ng-if="cat_id>0" class="catheading" ng-click="catsShow();"><span ng-bind-html="selectedCat.title|lowercase"></span> ({{selectedCat.total}})</a>
+    <span ng-if="cat_id<=0" >{{catname}}</span>
+     <!-- {{cat_id}} {{catname}}  -->
+  </ion-nav-title>
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-buttons side="left">
+    <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeftSideMenu();"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button class="button button-icon button-clear ion-android-search" ng-click="searchShow();" ></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+    <ion-content scroll="false" overflow-scroll="true"  >
+
+       <ion-slide-box slide-tabs-scrollable="true"  show-pager="false" ion-slide-tabs>
+        <ion-slide ion-slide-tab-label="All"   >
+          <ion-content direction="y" class="subContent"  scroll="true"   lazy-scroll>
+            <div class="list products" ng-repeat="tmpObj in products">
+
+
+
+              <div class="item item-thumbnail-left">
+                <img image-lazy-src="http://kenndiweni-001-site3.atempurl.com/img/{{tmpObj.imageLink!=null ? tmpObj.imageLink : 'download (4).jpg' }}" ng-click="showProductDetail(tmpObj.id);" image-lazy-loader="spiral" image-lazy-distance-from-bottom-to-load="-10">
+                <h2>{{tmpObj.productName | lowercase}}</h2>
+                <h3>{{tmpObj.manufacturer | lowercase}}</h3>
+                <h3 ng-if="tmpObj.weight">Weight : {{tmpObj.weight | number:2}} {{tmpObj.weight_class | lowercase}}</h3>
+                <h3>Product Code : {{tmpObj.productCode}}</h3>
+                <div class="row">
+                  <div class="col col-40" >
+                    <span class="price" ng-bind-html="tmpObj.price"></span>
+                    <span class="saleprice" id="sprice_{{tmpObj.id}}" ng-bind-html="tmpObj.price"></span>
+                  </div>
+                <div class="col col-60" >
+
+                    <ul ng-if="tmpObj.outOfStock !=0" id="cartbtn_{{tmpObj.id}}" class='tg-list'>
+                    <li class='tg-list-item'>
+                      <input class='tgl tgl-flip' id='cb{{tmpObj.id}}' checked ng-if="selectId==tmpObj.id"  type='checkbox' >
+                      <input class='tgl tgl-flip' id='cb{{tmpObj.id}}' ng-if="selectId!=tmpObj.id"   ng-click="AddToCart(tmpObj)" type='checkbox' >
+                      <label class='tgl-btn' data-tg-off='Add' data-tg-on='Done' for='cb{{tmpObj.id}}'></label>
+                    </li>
+                    </ul>
+                    <div ng-show="tmpObj.outOfStock !=0" id="nostock_{{tmpObj.id}}"  class="outofStock">Not In Stock</div>
+                </div>
+                </div>
+              </div>
+
+             </div>
+               <div class="noProudct" ng-if="noRecords">
+                <i class="ion-ios-cart"></i>
+                <p>Désolé! Il n'y a aucun produit à afficher</p>
+                <a ng-href="#/app/dashboard" class="button button-balanced"> Commencer à magasiner</a>
+               </div>
+            <!-- <ion-infinite-scroll ng-if="!noProductsAvailable" on-infinite="loadMoreProducts()" distance="1%"   spinner-class="spinner-energized" spinner="spiral"></ion-infinite-scroll> -->
+         </ion-content>
+
+        </ion-slide>
+
+         <!-- <ion-slide ion-slide-tab-label="New Products"   >
+
+           <ion-content direction="y" class="subContent"  lazy-scroll>
+
+              <div class="list products" ng-repeat="tmpObj in newProducts">
+                <div class="item item-thumbnail-left">
+                   <img image-lazy-src="http://kenndiweni-001-site3.atempurl.com/img/{{tmpObj.imageLink!=null ? tmpObj.imageLink : ' download (4).jpg' }}" ng-click="showProductDetail(tmpObj.id);" image-lazy-loader="spiral" image-lazy-distance-from-bottom-to-load="-10">
+                  <h2>{{tmpObj.productName | lowercase}}</h2>
+                  <h3>{{tmpObj.manufacturer | lowercase}}</h3>
+                  <h3 ng-if="tmpObj.weight">Weight : {{tmpObj.weight | number:2}} {{tmpObj.weight_class | lowercase}}</h3>
+                  <h3>Product Code : {{tmpObj.productCode}}</h3>
+
+                  <div class="row">
+                    <div class="col col-40">
+                      <span class="price" ng-bind-html="tmpObj.price"></span>
+                      <span class="saleprice" id="sprice_{{tmpObj.id}}" ng-bind-html="tmpObj.price"></span>
+                    </div>
+                    <div class="col col-60">
+                      <ul class='tg-list'>
+                      <li class='tg-list-item'>
+                       <input class='tgl tgl-flip' id='cb{{tmpObj.id}}' checked ng-if="selectId==tmpObj.id"  type='checkbox' >
+                      <input class='tgl tgl-flip' id='cb{{tmpObj.id}}' ng-if="selectId!=tmpObj.id"   ng-click="AddToCart(tmpObj)" type='checkbox' >
+
+                      <label class='tgl-btn' data-tg-off='Add' data-tg-on='Done' for='cb{{tmpObj.id}}'></label>
+                      </li>
+                      </ul>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+           </ion-content>
+         </ion-slide> -->
+
+      </ion-slide-box>
+
+       <div class="tabs tabs-icon-left">
+        <a class="tab-item" ng-href="#/app/filter/{{cat_id}}"><i class="icon ion-funnel"></i>Filter</a>
+        <a class="tab-item" ng-click="sortShow();"><i class="icon ion-android-options"></i>Sort</a>
+      </div>
+
+
+    </ion-content>
+  </ion-view>

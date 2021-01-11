@@ -1,0 +1,36 @@
+<ion-view view-title="Dashboard">
+<ion-nav-title><div class="logo"></div></ion-nav-title>
+<ion-nav-bar class="bar-stable">
+	<ion-nav-buttons side="left"><button  ng-click="toggleLeftSideMenu();" class="button button-icon button-clear ion-navicon"></button>
+	</ion-nav-buttons>
+	<ion-nav-buttons side="right">
+		<button class="button button-icon button-clear ion-android-search" ng-click="searchShow();" ></button>
+	</ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content  lazy-scroll>
+	 <div class="sliderBox">
+		<div class="slider-page-bg"></div>
+		<ion-slide-box auto-play="true" does-continue="true" slide-interval="2000" ng-if="bannerData.length" >
+		  <ion-slide ng-repeat="img in bannerData"><img ng-src="img/banners/{{img.banner_image}}" class="sliderImg"> </ion-slide>
+		</ion-slide-box>
+  </div>
+
+	<ion-scroll direction="x" class="catScroll">
+			<a href="#/app/products/{{catObj.subcategory[0].id}}" class="button" ng-repeat="catObj in accordionArray">
+				<img  ng-src="img\category\big\grocery-120x120.png" width="55" />
+				<p>{{catObj.title|lowercase}}</p>
+			</a>
+  </ion-scroll>
+
+
+
+	<div class="row">
+		<div class="col col-50"><a ng-href="#/app/products/{{productAdsOne}}"><img  ng-src="http://kenndiweni-001-site3.atempurl.com/img/{{imageAdsOne}}" width="100%" /></a></div>
+		<div class="col col-50"><a ng-href="#/app/products/{{productAdsTwo}}"><img  ng-src="http://kenndiweni-001-site3.atempurl.com/img/{{imageAdsTwo}}" width="100%" /></a></div>
+	</div>
+
+	<div class="row">
+	<div class="col"><a ng-href="#/app/products/{{productAdsThree}}"><img  ng-src="http://kenndiweni-001-site3.atempurl.com/img/{{imageAdsThree}}" width="100%" /></a></div>
+	</div>
+  </ion-content>
+</ion-view>

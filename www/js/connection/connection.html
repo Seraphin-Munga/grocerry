@@ -1,0 +1,14 @@
+<ion-view hide-nav-bar="true" can-swipe-back="false">
+  <ion-content class="padding connectionView" scroll="false">
+		<div class="noConnection" ng-show="noConnection" >
+			<img src="img/no-connection.png"  >
+			<h4>
+        Impossible de se connecter</h4>
+			<p>
+        Veuillez vérifier votre connexion réseau.</p>
+			<br/>
+			<a class="button button-positive" ng-click="checkConnection();">
+        RÉESSAYER</a>
+		</div>
+  </ion-content>
+</ion-view>

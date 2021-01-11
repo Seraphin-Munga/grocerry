@@ -1,0 +1,88 @@
+<ion-view view-title="Se Connecter">
+<ion-nav-bar class="bar-stable">
+	<ion-nav-buttons side="left">
+	<button ng-click="$ionicGoBack()" class="button back-button button-icon button-clear header-item ion-android-arrow-back"></button>
+	</ion-nav-buttons>
+	<ion-nav-buttons side="right"></ion-nav-buttons>
+</ion-nav-bar>
+<ion-content  scroll="false" >
+
+		<ion-slide-box slide-tabs-scrollable="false"  show-pager="false" ion-slide-tabs>
+			<ion-slide ion-slide-tab-label="Se Connecter" class="iniform"   >
+				<form name="userLoginForm" class="formStyle padding" ng-submit="userLogin(userLoginForm);" novalidate >
+					<div class="list" >
+					<!-- Email -->
+					<label class="item item-input"  ng-class="{ 'has-errors' : userLoginForm.email.$invalid, 'no-errors' : userLoginForm.email.$valid}">
+						<input type="email" placeholder="Adresse e-mail" name="email"  maxlength="50" ng-model="iniLogin.email" required>
+					</label>
+					<div class="error-container" ng-show="userLoginForm.email.$error" ng-messages="userLoginForm.email.$error">
+						<div ng-messages-include="error-list.html"></div>
+					</div>
+
+					<!-- Password -->
+					<label class="item item-input"  ng-class="{ 'has-errors' : userLoginForm.password.$invalid, 'no-errors' : userLoginForm.password.$valid}">
+						<input type="password" placeholder="Mot de passe" name="password" ng-minlength="8" ng-maxlength="15" maxlength="20" ng-model="iniLogin.password" >
+					</label>
+					<div class="error-container" ng-show="userLoginForm.password.$error" ng-messages="userLoginForm.password.$error">
+						<div ng-messages-include="password-validate.html"></div>
+					</div>
+
+				  <button class="button button-block icon-left button-balanced" ng-disabled="userLoginForm.$invalid">Se Connecter</button>
+				 </div>
+
+				</form>
+				<!-- <div style="text-align:center;">
+        <p>sales@opensourcetechnologies.com</p>
+
+				<p>demo1234</p>
+				</div> -->
+
+
+			</ion-slide>
+
+			<ion-slide ion-slide-tab-label="Réinitialiser le mot de passe"  class="iniform"  >
+			<form name="userResetPwd" class="formStyle padding" ng-submit="userResetPassword(userResetPwd);" novalidate >
+					<div class="list" >
+
+					<!-- Email -->
+					<label class="item item-input"  ng-class="{ 'has-errors' : userResetPwd.email.$invalid, 'no-errors' : userResetPwd.email.$valid}">
+						<input type="email" placeholder="Adresse e-mail" ng-blur="isEmailExistForgot(userResetPwd)" name="email"  maxlength="50" ng-model="iniReset.email" required>
+					</label>
+					<div class="error-container" ng-show="userResetPwd.email.$error" ng-messages="userResetPwd.email.$error">
+						<div ng-messages-include="error-list.html"></div>
+					</div>
+
+				  <button class="button button-block icon-left button-balanced" ng-disabled="userResetPwd.$invalid" >Réinitialiser</button>
+				 </div>
+				</form>
+			</ion-slide>
+
+		</ion-slide-box>
+
+			<script id="error-list.html" type="text/ng-template">
+			<div class="error" ng-message="minlength">
+        La longueur minimale de ce champ est de 3 caractères!</div>
+			<div class="error" ng-message="maxlength">
+        La longueur maximale de ce champ est de 20 caractères	</div>
+			<div class="error" ng-message="email">  S'il vous plaît, mettez une adresse email valide	</div>
+			</script>
+
+			<script id="password-validate.html" type="text/ng-template">
+			<div class="error" ng-message="minlength">
+        La longueur minimale de ce champ est de 8 caractères! </div>
+			<div class="error" ng-message="maxlength">
+        La longueur maximale de ce champ est de 15 caractères!	</div>
+			</script>
+			<script id="phone-validate.html" type="text/ng-template">
+			<div class="error" ng-message="minlength">
+        La longueur minimale de ce champ est de 10 caractères! </div>
+			<div class="error" ng-message="maxlength"> La longueur maximale de ce champ est de 10 caractères!	</div>
+			</script>
+
+
+
+
+
+
+</ion-content>
+</ion-view>
